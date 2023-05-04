@@ -1,0 +1,153 @@
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  /* --------------------------------------------------- */
+  
+  .progress {
+    max-width: 568px;
+    max-height: 568px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.6s;
+    margin: 20px;
+  }
+  
+  .progress__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .progress__circle {
+    transition: all 0.6s;
+  }
+  
+  .progress__circle-wrap {
+    margin: 40px;
+  }
+  
+  .progress__ring {
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+  
+  .progress__ring_rotating {
+    animation: rotation 3s infinite linear;
+  }
+  
+  .progress__graph_hidden {
+    display: none;
+  }
+  
+  .progress__controls {
+    margin: 40px;
+  }
+  
+  .progress__control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .progress__control:last-child {
+    margin-bottom: 0;
+  }
+  
+  .progress__control-title {
+    margin-left: 20px;
+  }
+  
+  .progress__input {
+    width: 43px;
+    height: 27px;
+    box-sizing: border-box;
+    border-radius: 27px;
+    -moz-appearance: textfield;
+    text-align: center;
+    outline: none;
+    border: 1px black solid;
+  }
+  
+  .progress__switch {
+    position: relative;
+    display: inline-block;
+    width: 43px;
+    height: 27px;
+  }
+  
+  .progress__checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .progress__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e1e6ee;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .progress__slider:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .progress__checkbox:checked + .progress__slider {
+    background-color: #255af6;
+  }
+  
+  .progress__checkbox:focus + .progress__slider {
+    box-shadow: 0 0 1px #255af6;
+  }
+  
+  .progress__checkbox:checked + .progress__slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  
+  /* Rounded progress__sliders */
+  .progress__slider.progress__slider_round {
+    border-radius: 27px;
+  }
+  
+  .progress__slider.progress__slider_round:before {
+    border-radius: 50%;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(-90deg);
+    }
+  
+    100% {
+      transform: rotate(270deg);
+    }
+  }
